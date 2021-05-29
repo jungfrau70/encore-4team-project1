@@ -20,10 +20,12 @@ socketio = SocketIO(app)
 def index():
     return render_template('index.html')
 
-
-if __name__ == '__main__':
-    Timer(1,lambda: webbrowser.open_new("http://127.0.0.1:5000/")).start()
-    socketio.run(app)
+if __name__ == "__main__":
+    socketio.run(app, port=5000, host='0.0.0.0', debug=True)
+    
+# if __name__ == '__main__':
+#     Timer(1,lambda: webbrowser.open_new("http://0.0.0.0:5000/")).start()
+#     socketio.run(app)
     
     
     
